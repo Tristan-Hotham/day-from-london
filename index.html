@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>A day from London | How far you could get in 12 hours, 1750 to today</title>
+<meta name="description" content="Leaving Charing Cross at dawn, how much of Great Britain could you reach in 12 hours? 5% in 1750, 97% today. A calibrated model of roads and railways in five eras.">
+<meta property="og:title" content="A day from London">
+<meta property="og:description" content="How far you could get from London in 12 hours in 1750, the 1830s, 1850, 1910 and today: from 5% of Great Britain to 97%.">
+<meta property="og:image" content="https://maps.tristanhotham.com/day-from-london/header.png">
+<meta property="og:url" content="https://maps.tristanhotham.com/day-from-london/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<style>
+:root{--bg:#F6EED8;--panel:#EFE3C4;--fg:#2B2119;--muted:#6E604E;--rule:#E2D3AE;--card:#FBF5E4;--border:#D3C29A;--hot:#B4442E;--cool:#2F6A9E;
+  --display:"Fraunces",Georgia,serif;--body:"Source Serif 4",Georgia,serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1A1612;--panel:#241E18;--fg:#EFE6D4;--muted:#ADA08B;--rule:#3A3128;--card:#211B15;--border:#4D4234;--hot:#E07A6C;--cool:#8FB4DA;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1A1612;--panel:#241E18;--fg:#EFE6D4;--muted:#ADA08B;--rule:#3A3128;--card:#211B15;--border:#4D4234;--hot:#E07A6C;--cool:#8FB4DA;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 18px/1.62 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden}
+.wrap{max-width:720px;margin:0 auto;padding-block:28px 64px}
+a{color:inherit;text-decoration-color:var(--hot);text-underline-offset:3px}
+.kicker{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.kicker b{background:var(--hot);color:#fff;padding:5px 8px;font-weight:500}
+h2{font:800 34px/1.04 var(--display);letter-spacing:-.01em;margin:54px 0 10px;text-wrap:balance}
+h2 .n{font:500 13px/1 var(--mono);color:var(--hot);display:block;letter-spacing:.1em;margin-bottom:10px}
+p{margin:0 0 16px}
+.byline{font:400 13px/1.4 var(--mono);color:var(--muted);margin-top:14px}
+.src{font:400 12px/1.45 var(--mono);color:var(--muted);margin-top:10px}
+ul.plain{padding-left:20px} ul.plain li{margin:4px 0}
+details{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:10px 0;margin:18px 0;font-size:16px}
+summary{font:500 13px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 0}
+.cta a{font:500 13px/1 var(--mono);text-decoration:none;border:1px solid var(--fg);padding:11px 14px;border-radius:3px}
+.cta a.p{background:var(--hot);border-color:var(--hot);color:#fff}
+footer{border-top:6px double var(--fg);margin-top:56px;padding-top:16px;font:400 13px/1.55 var(--mono);color:var(--muted)}
+footer p{margin:0 0 10px}
+.theme{font:500 12px/1 var(--mono);background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;padding:4px 8px;cursor:pointer;min-height:28px}
+.figure{margin:22px 0}.figure img{width:100%;display:block;border:1px solid var(--border);background:#F6EED8}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:22px 0}
+.stat b{display:block;font:900 40px/1 var(--display);color:var(--hot)}
+.stat span{font:400 13px/1.35 var(--mono);color:var(--muted)}
+table.t{width:100%;border-collapse:collapse;font:400 13.5px/1.4 var(--mono);margin:12px 0 4px}
+table.t th{text-align:left;font-weight:500;border-bottom:2px solid var(--fg);padding:5px 6px 5px 0}
+table.t td{border-bottom:1px solid var(--rule);padding:5px 6px 5px 0;vertical-align:top}
+table.t td.r,table.t th.r{text-align:right}
+.tscroll{overflow-x:auto}
+.topbar{height:40px;display:flex;align-items:center;gap:14px;margin:0 calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding:0 max(14px,env(safe-area-inset-left,0px));border-bottom:3px double var(--fg);background:var(--bg);overflow:hidden;white-space:nowrap}
+.tb-name{font:800 18px/1 var(--display);color:var(--hot);text-decoration:none}
+.tb-k{font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.tb-links{margin-left:auto;display:flex;gap:16px;align-items:center;font:500 12px/1 var(--mono)}
+.tb-links a{text-decoration:none}
+.mapband{width:100vw;margin-left:calc(50% - 50vw)}
+.pane{position:relative;height:calc(100vh - 43px);height:calc(100svh - 43px);min-height:480px;border-bottom:1px solid #BCA676;background:#EEF1F2;overflow:hidden}
+#map{position:absolute;inset:0}
+.cartouche{position:absolute;left:14px;top:14px;z-index:5;max-width:min(340px,calc(100% - 28px));background:rgba(251,243,220,.96);color:#2B2119;border:2px solid #2B2119;padding:10px 14px;box-shadow:0 3px 14px rgba(60,40,10,.22)}
+.cartouche h1{font:900 clamp(22px,2.3vw,30px)/1 var(--display);letter-spacing:-.015em;margin:6px 0 0;color:#2B2119}
+.cartouche h1 .a{color:#B4442E}
+.cartouche .dek{font-size:13.5px;line-height:1.36;margin:6px 0 0}
+.cartouche .byline{font-size:11px;color:#6E604E;margin-top:6px}.cartouche .kicker{color:#6E604E}
+.ct-fold{position:absolute;right:6px;top:5px;width:26px;height:26px;border:0;background:none;color:#B4442E;font:700 16px/1 var(--mono);cursor:pointer;padding:0}
+.ct-toggle{display:none;font:800 16px/1 var(--display);color:#B4442E;background:none;border:0;padding:2px 0;cursor:pointer;min-height:30px}
+.cartouche.folded .ct-body,.cartouche.folded .ct-fold{display:none}.cartouche.folded .ct-toggle{display:block}.cartouche.folded{padding:4px 11px}
+.ov-top{position:absolute;z-index:6;right:54px;top:10px;max-width:calc(100% - 480px);display:flex;flex-direction:column;gap:6px;align-items:flex-end;pointer-events:none;font:400 13px/1.3 var(--mono);color:#2B2119}
+.ov-top>*{pointer-events:auto}
+.srch{position:relative;width:min(340px,100%)}
+.srch input{width:100%;font:400 15px/1 var(--mono);background:rgba(251,245,228,.97);color:#2B2119;border:1px solid #9C8656;border-radius:3px;padding:9px 10px;min-height:40px}
+.sug{position:absolute;left:0;right:0;top:100%;margin:2px 0 0;padding:0;list-style:none;background:#FBF5E4;border:1px solid #9C8656;max-height:300px;overflow:auto;display:none;z-index:12}
+.sug li{padding:8px 10px;cursor:pointer;border-bottom:1px solid #E7D9B6}.sug li span{color:#7A6A52;font-size:12px}
+.sug li[aria-selected="true"],.sug li:hover{background:#EFE1BC}
+.chips{display:flex;gap:6px;overflow-x:auto;max-width:100%;scrollbar-width:none;padding-bottom:2px}.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;font:500 12px/1 var(--mono);background:rgba(251,245,228,.95);color:#2B2119;border:1px solid #9C8656;border-radius:999px;padding:8px 11px;cursor:pointer;min-height:34px;white-space:nowrap}
+.chip[aria-pressed="true"]{background:#B4442E;color:#fff;border-color:#2B2119}
+.chip.lyr{background:#2B2119;color:#F6EED8;border-color:#2B2119}
+.lp{position:absolute;right:54px;top:60px;z-index:9;background:rgba(251,245,228,.98);border:1px solid #9C8656;border-radius:4px;padding:10px 12px 8px;font:400 13px/1.3 var(--mono);color:#2B2119;box-shadow:0 3px 12px rgba(60,40,10,.25);display:none;min-width:250px}
+.lp.open{display:block}.lp h4{margin:0 0 6px;font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#7A6A52}
+.lp label{display:flex;gap:8px;align-items:center;padding:5px 0;cursor:pointer;min-height:30px}.lp input{accent-color:#B4442E;width:16px;height:16px;flex:none}
+.keys{position:absolute;left:12px;bottom:12px;z-index:4;background:rgba(251,243,220,.96);border:1px solid #9C8656;border-radius:3px;padding:8px 10px;font:400 11.5px/1.25 var(--mono);color:#2B2119;max-width:270px}
+.keys b{display:block;font:800 14px/1.1 var(--display);margin-bottom:5px}
+.keys .bar{height:10px;border:1px solid rgba(43,33,25,.4)}
+.keys .ends{display:flex;justify-content:space-between;font-size:10.5px;color:#6E604E;margin-top:2px}
+.keys .row{display:flex;align-items:center;gap:6px;margin-top:5px}.keys .dot{width:10px;height:10px;border-radius:50%;background:#B9B4AA;border:1px solid #fff;box-shadow:0 0 0 1px #888}
+.maplibregl-popup-content{background:#FBF5E4;color:#2B2119;font:400 13px/1.45 var(--mono);border:1px solid #9C8656;border-radius:4px;padding:10px 12px;max-width:320px;max-height:44vh;overflow:auto}
+.maplibregl-popup-content b.t{display:block;font:800 19px/1.15 var(--display);color:#B4442E;margin-bottom:3px;padding-right:14px}
+.maplibregl-popup-content table{border-collapse:collapse;margin:5px 0}.maplibregl-popup-content td{padding:1px 8px 1px 0;vertical-align:top}
+.maplibregl-popup-content td:first-child{color:#7A6A52}.maplibregl-popup-content .nt{color:#7A6A52;font-size:11.5px;margin:5px 0 0}
+.maplibregl-popup-content a{color:#B4442E}
+.maplibregl-ctrl-attrib{font:400 11px/1.3 var(--mono)!important}
+.nojs{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:400 14px var(--mono);color:#6E604E;padding:20px;text-align:center}
+@media (max-width:1000px){.ov-top{left:10px;right:54px;max-width:none;align-items:flex-start}.lp{left:10px;right:auto;top:100px}.cartouche{top:100px}}
+@media (max-width:600px){.tb-k,.tb-links a.x{display:none}.topbar{gap:10px}.tb-name{font-size:15px}.tb-links{gap:10px}
+  .lp{left:8px;right:8px;min-width:0}.ov-top{left:8px;top:8px}.cartouche{left:8px;top:100px;max-width:calc(100% - 16px)}.cartouche h1{font-size:23px}
+  .ct-toggle{display:block}.ct-fold{display:none}.keys{max-width:200px;font-size:10.5px;padding:6px 8px}.chip{padding:8px 8px;font-size:11.5px}.keys .kx{display:none}.chips{flex-wrap:wrap}.cartouche{top:150px}}
+.maplibregl-popup{z-index:7}
+.tl{position:absolute;left:12px;right:60px;bottom:12px;z-index:5;display:flex;align-items:center;gap:10px;background:rgba(251,243,220,.96);border:1px solid #9C8656;border-radius:3px;padding:6px 10px;font:400 12px/1.2 var(--mono);color:#2B2119;max-width:560px}
+.tl input[type=range]{flex:1;accent-color:#B4442E;min-width:80px}
+.tl b{font:800 15px/1 var(--display);min-width:92px;text-align:center}
+.tl button{font:500 12px/1 var(--mono);background:#2B2119;color:#F6EED8;border:0;border-radius:3px;padding:7px 9px;cursor:pointer;min-height:30px}
+.keys{bottom:64px}
+.spark{display:block;margin:6px 0 2px}
+.maplibregl-popup-content .pl{border-top:1px solid #E2D3AE;margin-top:6px;padding-top:6px}
+@media (max-width:600px){.tl{left:8px;right:52px;bottom:8px;gap:6px;padding:5px 7px}.tl b{min-width:70px;font-size:13px}.keys{bottom:56px}}
+.eras{display:flex;gap:4px;flex:1;justify-content:space-between}
+.eras button{flex:1;font:600 13px/1 var(--mono);background:#FBF5E4;color:#2B2119;border:1px solid #9C8656;border-radius:3px;padding:7px 4px;cursor:pointer;min-height:32px}
+.eras button[aria-pressed="true"]{background:#B4442E;color:#fff;border-color:#2B2119}
+.keys .bands{display:flex;margin-top:4px}.keys .bands span{flex:1;height:11px}
+.keys .bl{display:flex;justify-content:space-between;font-size:10px;color:#6E604E;margin-top:2px}
+.keys .ln{display:flex;align-items:center;gap:6px;margin-top:5px}.keys .ln i{display:inline-block;width:22px;border-top:2px solid #2B2119}.keys .ln i.d{border-top:2px dashed #2B2119}
+.keys .area{font:800 15px/1.2 var(--display);color:#B4442E;margin-top:6px}
+.maplibregl-popup-content .hrs td.b{font-weight:600;color:#2B2119}
+.tl .eras{max-width:420px}
+.figure2{display:grid;grid-template-columns:1fr;gap:12px}
+
+</style></head>
+<body>
+<div class="topbar">
+  <a class="tb-name" href="#mapWrap">A day from London</a>
+  <span class="tb-k">Data study · 2026</span>
+  <nav class="tb-links"><a href="#essay">About</a><button class="theme" id="theme" aria-label="Toggle dark mode">◐</button><a href="https://doi.org/10.5281/zenodo.24105505">Paper</a><a class="x" href="https://github.com/Tristan-Hotham/day-from-london">Data and code</a></nav>
+</div>
+<div class="mapband">
+  <div class="pane" id="mapWrap" data-fullscreen-map role="application" aria-label="Map of Great Britain coloured by hours of travel from London in the chosen era">
+    <div id="map"></div>
+    <div class="nojs" id="nojs">Loading the map. It needs JavaScript and WebGL.</div>
+    <div class="cartouche" id="cartouche">
+      <button class="ct-toggle" id="ctToggle" aria-expanded="true">A day from London ▾</button>
+      <button class="ct-fold" id="ctFold" title="Fold the title" aria-label="Fold the title">▴</button>
+      <div class="ct-body">
+        <div class="kicker"><b>Data study</b><span>2026</span></div>
+        <h1>A day <span class="a">from London</span></h1>
+        <p class="dek">Leave Charing Cross at dawn and travel for twelve hours. Colours show the modelled hours to every 2 km square of Great Britain on the roads and railways of each era; the black line is the edge of the day and the dashed lines its uncertainty. Pick an era below; tap anywhere for the hours in every era.</p>
+        <div class="byline">Dr Tristan Hotham · Independent researcher · 2026</div>
+      </div>
+    </div>
+    <div class="ov-top">
+      <div class="srch"><input type="search" id="q" placeholder="Find a town" aria-label="Find a town" autocomplete="off"><ul class="sug" id="sug" role="listbox"></ul></div>
+      <div class="chips"><button class="chip lyr" id="lyrBtn" aria-expanded="false" aria-controls="lp">Layers</button></div>
+    </div>
+    <div class="lp" id="lp" role="dialog" aria-label="Map layers">
+      <h4>Layers</h4>
+      <label><input type="checkbox" id="lyH" checked> Hours of travel (colours)</label>
+      <label><input type="checkbox" id="lyI" checked> Edge of a 12-hour day</label>
+      <label><input type="checkbox" id="lyU" checked> Uncertainty of the edge (dashed)</label>
+      <label><input type="checkbox" id="lyR" checked> Roads or railways of the era</label>
+      <label><input type="checkbox" id="lyT" checked> Towns</label>
+      <label><input type="checkbox" id="lyD"> Documented journeys of the era (rings)</label>
+      <label><input type="checkbox" id="lyB" checked> Base map labels</label>
+    </div>
+    <div class="keys" id="keys"><b>Hours from Charing Cross</b><div class="bands" id="keyBands"></div><div class="bl"><span>0</span><span>4</span><span>8</span><span>12</span><span>24+</span></div>
+      <div class="ln"><i></i>edge of the day (12 h)</div><div class="ln kx"><i class="d"></i>with speeds &plusmn; the model error</div>
+      <div class="area" id="keyArea"></div><div class="row kx" id="keyNet" style="color:#6E604E"></div><div class="row kx" style="color:#6E604E">Great Britain only; 2 km squares; no timetables</div></div>
+    <div class="tl" id="tl"><button id="play" aria-label="Play through the eras">Play</button><div class="eras" role="group" aria-label="Era"><button>1750</button><button>1830s</button><button>1850</button><button>1910</button><button>Today</button></div></div>
+  </div>
+</div>
+<div class="wrap" id="essay">
+<p style="margin-top:6px">Leave Charing Cross at dawn and travel for twelve hours. How far do you get? In 1754 a coach promised Edinburgh in ten days; in 1837 the Edinburgh mail took just over 42 hours; by the early 1900s the Flying Scotsman took eight and a quarter, and today's fastest train takes four. Those famous journeys do not show the whole map, so I built a model of Great Britain's roads and railways in five eras and drew the edge of the day.</p>
+<div class="byline">Dr Tristan Hotham · Independent researcher · 2026 · Data: turnpike roads and London coaches (Rosevear, Bogart, Shaw-Taylor, Satchell, openICPSR), 1851 rail lines (Cambridge Group, CC BY 4.0), OpenStreetMap (ODbL) · Base map: OpenFreeMap Positron</div>
+<div class="stats">
+<div class="stat"><b>5%</b><span>of Great Britain within a day of London in 1750, by stage coach</span></div>
+<div class="stat"><b>19%</b><span>in the 1830s, on the fast coaches</span></div>
+<div class="stat"><b>47%</b><span>at least, in 1850, with the first railways</span></div>
+<div class="stat"><b>97%</b><span>today, by car or train</span></div>
+</div>
+
+<h2><span class="n">01 · 1750</span>A day is about 69 km</h2>
+<p>The model's 1750 coach runs at about 3.6 miles an hour on the turnpikes of the time, a speed fitted to a dozen dated journeys from London between 1739 and 1764, counting a travelling day as twelve hours. Roads that were not yet turnpikes run at 0.6 of that speed. The day ends around 69 km of road from London, and everything inside it covers 11,144 km², 5% of the island. <a data-go="Edinburgh|1750">Edinburgh</a> is about 9 travelling days away. Treat this map as a rough sketch: the model misses the dated journeys by a median of 28% when each one is left out of the fit, above the 25% limit set in the written plan, so by its own test it fails.</p>
+<div class="figure"><img src="img/maps.jpg" alt="Five maps of Great Britain coloured by hours from London in 1750, the 1830s, 1850, 1910 and today, the reachable area growing from a small patch around London to almost the whole island" loading="lazy"><p class="src">Hours of travel from Charing Cross in each era; the black line is twelve hours, the dashed lines show it with speeds plus or minus the model's error.</p></div>
+
+<h2><span class="n">02 · The 1830s</span>The coach at full gallop</h2>
+<p>For the 1830s the coach speed is fitted to the timetables of 136 coach services from London in 1836, compiled by Alan Rosevear, Dan Bogart and Leigh Shaw-Taylor and mapped onto the turnpike roads of the day. The best fit is 8.4 miles an hour, stops included. A day now reached 19% of Britain: Leicester, 143 km away, in 11.7 hours. Tested on a separate list of the mail coaches that left London every night in 1837, which it never saw, the model is out by a median of 12%. The Edinburgh mail, timed at 42.4 hours, comes out at 44.2.</p>
+<div class="figure"><img src="img/coach.jpg" alt="Two scatter charts of scheduled coach speeds against route length in 1819 and 1836, most 1836 services between 8 and 11 miles an hour" loading="lazy"><p class="src">The fastest coach from London to each place in 1819 and 1836, with the fitted speed on a turnpike.</p></div>
+
+<h2><span class="n">03 · 1850</span>The railway arrives</h2>
+<p>By 1851 there were about 6,300 miles of railway. Trains run at the average speeds Tim Leunig measured from the timetables of 1850, 26 miles an hour along the track on main lines and less on branches, with half an hour's wait for each train and coaches feeding the stations. The day reached 47% of Britain, Holyhead, 366 km away, in 11.2 hours. This is a lower bound: these average trains are slower than the documented expresses by a median 46% (four journeys). In about fifteen years the area within a day of London grew at least 2.5 times, and its shape changed from a blob to a star along the main lines.</p>
+
+<h2><span class="n">04 · 1910 and today</span>Nearly everywhere</h2>
+<p>There is no public map of the 1910 railway network, so I rebuilt it from the 1851 lines, today's lines and straight links between stations that closed after 1910 (dashed on the map). With Leunig's 1910 speeds a day reached at least 72% of the island, again a lower bound (the model is 34% slower than six documented expresses). Today, by car or train, it is 97%: every mainland town on the map, and only islands are left outside. Try <a data-go="Inverness|today">Inverness</a>, <a data-go="Penzance|1910">Penzance</a> or <a data-go="Holyhead|1830">Holyhead</a>.</p>
+<div class="figure"><img src="img/area.jpg" alt="Bar chart of the share of Great Britain within twelve hours of London, from 5% in 1750 to 97% today" loading="lazy"><p class="src">Share of land within twelve hours; whiskers show speeds plus or minus the model error.</p></div>
+<div class="figure"><img src="img/edinburgh.jpg" alt="Line chart on a log scale of hours from London to Edinburgh from 1750 to today, documented journeys and the model both falling from about 120 hours to about 4" loading="lazy"><p class="src">London to Edinburgh: documented journeys (days counted as twelve travelling hours) and the model.</p></div>
+
+<h2><span class="n">05 · Checks</span>How good is the model?</h2>
+<p>Every speed is either fitted to cited journey times or taken from published work, and every era is tested on journeys it did not see. The 1830s coach model holds up well (a median error of 9% against the 1836 timetables, 12% against the 1837 mails). 1750 fails the 25% limit set in advance (28%) and is a rough sketch. Because the trains are average trains, the railway maps are slower than the famous expresses, by a median 46% in 1850 and 34% in 1910, on only four and six journeys, so the 1850 and 1910 maps are lower bounds. Today's fitted train misses twelve fastest times by a median 5%.</p>
+<div class="figure"><img src="img/valid.jpg" alt="Scatter chart of modelled against documented journey times from London for all five eras on log scales, most points near the diagonal" loading="lazy"><p class="src">Modelled against documented times. Dotted lines: within 20%.</p></div>
+
+<h2><span class="n">06 · How I did this</span>Turnpikes, rails and a grid</h2>
+<p><b>Roads.</b> For 1750 and the 1830s, the turnpike and main road map of England and Wales by Rosevear, Bogart, Shaw-Taylor and Satchell, which records whether each stretch was a turnpike in each decade. Scotland is not in it, so its main roads come from today's trunk and primary roads. In 1850 and 1910, feeder coaches use the roads of 1838. Today: OpenStreetMap motorways and A and B roads at fixed typical speeds.</p>
+<p><b>Railways.</b> The Cambridge Group's 1851 rail lines; for 1910, those lines, today's railways and inferred links between stations closed after 1910; today, OpenStreetMap. Trains can be boarded near stations open in each era.</p>
+<p><b>The model.</b> Britain is cut into 2 km squares; away from the networks the traveller walks at 3 miles an hour. Shortest paths from Charing Cross are found across every square, road and line. The analysis was pre-specified in a written plan before any travel times were computed.</p>
+<p><b>What this cannot say.</b> There are no timetables, so a coach or train is assumed to be there when you are, apart from a half-hour wait. Weather, hills, fares and the price of a seat are ignored, and in 1750 few people could afford a coach at all. The inferred lines of 1910 are straight. And the twelve hour day is a choice: an eight or sixteen hour day moves the line a long way.</p>
+
+<details><summary>Sources and licences</summary>
+<ul class="plain">
+<li>Turnpike roads: A. Rosevear, D. Bogart, L. Shaw-Taylor and M. Satchell, Turnpike road map for England and Wales 1700 to 1838, openICPSR project 195126 (doi:10.3886/E195126). London coaches: A. Rosevear, D. Bogart and L. Shaw-Taylor, Stagecoach services in England and Wales 1819 and 1836, openICPSR (doi:10.3886/E195128V2). No licence is stated for these files, so only derived results are shown: the road picture on the map is a low resolution drawing, not the data.</li>
+<li>Railways of 1851: M. Satchell, E. A. Wrigley, L. Shaw-Taylor, X. You and J. Henneberg, 1851 England, Wales and Scotland Rail Lines, UK Data Service ReShare (doi:10.5255/UKDA-SN-852991), CC BY 4.0.</li>
+<li>Today's roads and railways: OpenStreetMap contributors via OpenFreeMap vector tiles (ODbL). Stations open and closed: <a href="https://maps.tristanhotham.com/beeching-cuts/">Did Beeching Kill Your Town?</a> (Hotham 2026), from Wikipedia lists (CC BY-SA 4.0) and Wikidata (CC0).</li>
+<li>Train speeds: T. Leunig (2006) Time is money, Journal of Economic History 66(3). Documented journeys: C. G. Harper's road books (1899 to 1922), S. Smiles (1867), S. Sidney (1851), D. Bogart (2005), Visit London and other sources listed in the paper and in data/journeys_model.csv.</li>
+<li>Base map: OpenFreeMap Positron style (OpenStreetMap, ODbL). MapLibre GL JS 4.7.1 (BSD 3-Clause).</li>
+<li>Text and figures CC BY 4.0; code MIT; derived data CC BY 4.0 (OpenStreetMap-derived lines ODbL).</li>
+</ul></details>
+<div class="cta"><a class="p" href="https://doi.org/10.5281/zenodo.24105505">Read the paper</a><a href="https://github.com/Tristan-Hotham/day-from-london">Data and code</a><a href="https://blog.tristanhotham.com/2026/10/31/day-from-london/">Blog post</a></div>
+<footer>
+<p>Dr Tristan Hotham, Independent researcher. ORCID <a href="https://orcid.org/0000-0003-4931-9349">0000-0003-4931-9349</a>.</p>
+<p>Cite as: Hotham, T. (2026) A day from London: one-day travel reach across Great Britain in 1750, the 1830s, 1850, 1910 and today. Zenodo. <a href="https://doi.org/10.5281/zenodo.24105505">10.5281/zenodo.24105505</a></p>
+<p>Code: <a href="https://github.com/Tristan-Hotham/day-from-london">github.com/Tristan-Hotham/day-from-london</a> (MIT). Text, figures and data CC BY 4.0.</p>
+<p>I wrote the text, with drafting and editing assistance from Claude (Anthropic), which also helped prepare the analysis code. I reviewed and checked all text and results.</p>
+</footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="js/page.js?v=2026a"></script>
+<!-- map-fullscreen v1 -->
+<style id="mfs-style">
+.mfs-btn{position:absolute;top:10px;right:10px;z-index:1001;width:34px;height:34px;border:2px solid rgba(0,0,0,.25);border-radius:4px;background:#fff;color:#222;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.mfs-btn:hover{background:#f2f2f2}
+.mfs-btn svg{width:18px;height:18px}
+.mfs-host.mfs-btn-left .mfs-btn{right:auto;left:54px}
+.mfs-fake{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;height:100dvh!important;max-width:none!important;max-height:none!important;margin:0!important;z-index:100000!important;border-radius:0!important}
+html.mfs-lock,html.mfs-lock body{overflow:hidden!important}
+:fullscreen.mfs-host{width:100vw!important;height:100vh!important;max-width:none!important;max-height:none!important;margin:0!important;border-radius:0!important}
+</style>
+<script id="mfs-script">
+(function(){
+  var ICON_OPEN='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>';
+  var ICON_CLOSE='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg>';
+  function poke(){setTimeout(function(){window.dispatchEvent(new Event('resize'));},60);setTimeout(function(){window.dispatchEvent(new Event('resize'));},400);}
+  function realFS(){return document.fullscreenElement||document.webkitFullscreenElement;}
+  function add(el){
+    if(el.__mfs)return; el.__mfs=1;
+    var cs=getComputedStyle(el); if(cs.position==='static')el.style.position='relative';
+    el.classList.add('mfs-host');
+    // avoid clashing with a top-right Leaflet control (e.g. "Map layers")
+    var tr=el.querySelector('.leaflet-top.leaflet-right');
+    if(tr&&tr.children.length){ el.classList.add('mfs-btn-left'); }
+    var b=document.createElement('button'); b.type='button'; b.className='mfs-btn';
+    b.title='Full screen map'; b.setAttribute('aria-label','Full screen map'); b.innerHTML=ICON_OPEN;
+    ['click','dblclick','mousedown','touchstart','wheel'].forEach(function(t){b.addEventListener(t,function(e){e.stopPropagation();},{passive:t!=='click'});});
+    function setIcon(on){b.innerHTML=on?ICON_CLOSE:ICON_OPEN;b.title=on?'Exit full screen':'Full screen map';b.setAttribute('aria-label',b.title);}
+    function exitFake(){el.classList.remove('mfs-fake');document.documentElement.classList.remove('mfs-lock');setIcon(false);poke();}
+    b.addEventListener('click',function(e){
+      e.preventDefault();
+      if(el.classList.contains('mfs-fake')){exitFake();return;}
+      if(realFS()){(document.exitFullscreen||document.webkitExitFullscreen).call(document);return;}
+      var req=el.requestFullscreen||el.webkitRequestFullscreen;
+      if(req){ try{ var p=req.call(el); if(p&&p.catch)p.catch(function(){el.classList.add('mfs-fake');document.documentElement.classList.add('mfs-lock');setIcon(true);poke();}); }catch(err){el.classList.add('mfs-fake');document.documentElement.classList.add('mfs-lock');setIcon(true);poke();} }
+      else { el.classList.add('mfs-fake');document.documentElement.classList.add('mfs-lock');setIcon(true);poke(); }
+    });
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&el.classList.contains('mfs-fake'))exitFake();});
+    ['fullscreenchange','webkitfullscreenchange'].forEach(function(t){document.addEventListener(t,function(){setIcon(realFS()===el);poke();});});
+    el.appendChild(b);
+  }
+  function scan(){
+    var els=document.querySelectorAll('[data-fullscreen-map], .leaflet-container, .maplibregl-map, .mapboxgl-map');
+    els.forEach(function(el){
+      if(el.closest('.mfs-host')&&!el.classList.contains('mfs-host'))return;
+      var r=el.getBoundingClientRect(); if(r.width<200||r.height<150)return;
+      add(el);
+    });
+  }
+  function start(){scan(); var n=0; var t=setInterval(function(){scan(); if(++n>20)clearInterval(t);},500);}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start); else start();
+})();
+</script>
+<!-- /map-fullscreen -->
+
+<script src="https://maps.tristanhotham.com/assets/site-nav.js" defer></script>
+</body>
+</html>

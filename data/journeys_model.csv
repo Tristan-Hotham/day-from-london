@@ -1,0 +1,62 @@
+era,set,town,year,value,unit,hours,mode,source,model,model_loo,error_pc,model_fast,model_car_or_rail,note
+1830,valid,Bristol,1837,11.75,hours,11.75,mail coach,Harper 1903 vol 2,14.082,,19.844,,,1837 mail list
+1830,valid,Devonport,1837,21.233,hours,21.233,mail coach,Harper 1903 vol 2,25.713,,21.095,,,1837 mail list (Quicksilver)
+1830,valid,Birmingham,1837,11.933,hours,11.933,mail coach,Harper 1903 vol 2,13.224,,10.814,,,1837 mail list
+1830,valid,Bath,1837,11.0,hours,11.0,mail coach,Harper 1903 vol 2,13.176,,19.78,,,1837 mail list
+1830,valid,Manchester,1837,19.0,hours,19.0,mail coach,Harper 1903 vol 2,21.982,,15.697,,,1837 mail list
+1830,valid,Halifax,1837,20.083,hours,20.083,mail coach,Harper 1903 vol 2,23.298,,16.009,,,1837 mail list
+1830,valid,Liverpool,1837,20.833,hours,20.833,mail coach,Harper 1903 vol 2,24.028,,15.335,,,1837 mail list
+1830,valid,Holyhead,1837,26.917,hours,26.917,mail coach,Harper 1903 vol 2,31.075,,15.449,,,1837 mail list
+1830,valid,Norwich,1837,11.633,hours,11.633,mail coach,Harper 1903 vol 2,13.178,,13.276,,,1837 mail list (by Ipswich)
+1830,valid,Exeter,1837,18.2,hours,18.2,mail coach,Harper 1903 vol 2,20.585,,13.106,,,1837 mail list
+1830,valid,New Holland,1837,18.2,hours,18.2,mail coach,Harper 1903 vol 2,20.684,,13.65,,,1837 mail list (Hull via New Holland ferry)
+1830,valid,Leeds,1837,20.867,hours,20.867,mail coach,Harper 1903 vol 2,22.795,,9.24,,,1837 mail list
+1830,valid,Glasgow,1837,42.0,hours,42.0,mail coach,Harper 1903 vol 2,46.871,,11.597,,,1837 mail list
+1830,valid,Southampton,1837,8.5,hours,8.5,mail coach,Harper 1903 vol 2,9.426,,10.899,,,1837 mail list
+1830,valid,Edinburgh,1837,42.383,hours,42.383,mail coach,Harper 1903 vol 2,44.195,,4.275,,,1837 mail list
+1830,valid,Chester,1837,20.267,hours,20.267,mail coach,Harper 1903 vol 2,21.742,,7.28,,,1837 mail list
+1830,valid,Carmarthen,1837,24.0,hours,24.0,mail coach,Harper 1903 vol 2,25.487,,6.197,,,1837 mail list (Gloucester and Carmarthen)
+1830,valid,Worcester,1837,12.333,hours,12.333,mail coach,Harper 1903 vol 2,13.505,,9.504,,,1837 mail list
+1830,valid,Great Yarmouth,1837,13.5,hours,13.5,mail coach,Harper 1903 vol 2,15.152,,12.24,,,1837 mail list
+1830,valid,Louth,1837,15.933,hours,15.933,mail coach,Harper 1903 vol 2,17.867,,12.139,,,1837 mail list
+1830,valid,Stroud,1837,11.783,hours,11.783,mail coach,Harper 1903 vol 2,12.466,,5.792,,,1837 mail list
+1830,valid,Wells,1837,14.717,hours,14.717,mail coach,Harper 1903 vol 2,14.675,,-0.281,,,1837 mail list
+1830,valid,Falmouth,1837,31.917,hours,31.917,mail coach,Harper 1903 vol 2,31.908,,-0.027,,,1837 mail list
+1830,valid,Dover,1837,8.95,hours,8.95,mail coach,Harper 1903 vol 2,8.757,,-2.161,,,1837 mail list
+1830,valid,Hastings,1837,8.25,hours,8.25,mail coach,Harper 1903 vol 2,7.983,,-3.231,,,1837 mail list
+1830,valid,Portsmouth,1837,9.167,hours,9.167,mail coach,Harper 1903 vol 2,8.638,,-5.77,,,1837 mail list
+1830,valid,Brighton,1837,7.333,hours,7.333,mail coach,Harper 1903 vol 2,6.314,,-13.902,,,1837 mail list
+1750,calib,Birmingham,1749,3.0,days,36.0,stage coach,Smiles 1867,31.203,29.956,-13.324,,,made the journey to London in three days
+1750,calib,Birmingham,1740,40.0,hours,40.0,stage coach,Bogart 2005,31.203,29.956,-21.992,,,"40 hours in 1740, citing Pawson"
+1750,calib,Manchester,1754,4.5,days,54.0,flying coach,Smiles 1867,51.55,51.55,-4.537,,,advertised four and a half days
+1750,calib,Manchester,1760,60.0,hours,60.0,stage coach,Bogart 2005,51.55,51.55,-14.083,,,"60 hours in 1760, citing Pawson"
+1750,calib,Sheffield,1760,3.0,days,36.0,flying machine,Smiles 1867,46.159,47.504,28.221,,,evening of the third day
+1750,calib,Bath,1763,2.5,days,30.0,stage coach,Smiles 1867,30.167,30.167,0.555,,,between two and three days as late as 1763 (midpoint)
+1750,calib,Edinburgh,1754,10.0,days,120.0,stage coach,Harper 1901 Great North Road,108.825,105.966,-9.312,,,ten days in summer and twelve in winter (summer used)
+1750,calib,Edinburgh,1763,14.0,days,168.0,stage coach,Harper 1901 Great North Road,108.825,105.966,-35.223,,,took a fortnight if the weather was favourable
+1750,calib,Exeter,1758,3.0,days,36.0,flying coach,Harper 1899 Exeter Road,53.628,54.81,48.965,,,three days under the best conditions (c. 1758)
+1750,calib,Chester,1739,6.0,days,72.0,stage coach,Harper 1902 Holyhead Road,51.796,49.931,-28.061,,,Pennant's account of the 1739 journey
+1750,calib,York,1764,3.0,days,36.0,flying post coach,Gerhold via Great North Road site,56.445,58.027,56.792,,,winter journey time of 3 days to York
+1750,calib,Newcastle upon Tyne,1764,4.0,days,48.0,flying post coach,Gerhold via Great North Road site,78.076,83.647,62.658,,,3 days to York plus 1 day to Newcastle
+today,calib,Bristol,2026,1.75,hours,1.75,train,Visit London,1.68,1.66,-3.98,,1.428,fastest stated time
+today,calib,Cardiff,2026,1.833,hours,1.833,train,Visit London,1.867,1.867,1.854,,1.631,fastest stated time
+today,calib,Birmingham,2026,1.5,hours,1.5,train,Visit London,1.517,1.517,1.113,,1.368,fastest stated time
+today,calib,Manchester,2026,2.167,hours,2.167,train,Visit London,2.199,2.199,1.51,,1.947,fastest stated time
+today,calib,York,2026,1.917,hours,1.917,train,Visit London,2.266,2.303,18.202,,2.077,fastest stated time
+today,calib,Leicester,2026,1.167,hours,1.167,train,Visit London,1.632,1.65,39.919,,1.291,fastest stated time
+today,calib,Nottingham,2026,1.75,hours,1.75,train,Visit London,1.836,1.836,4.937,,1.527,fastest stated time
+today,calib,Derby,2026,1.5,hours,1.5,train,Visit London,1.722,1.722,14.768,,1.502,fastest stated time
+today,calib,Sheffield,2026,2.0,hours,2.0,train,Visit London,1.935,1.908,-3.255,,1.716,fastest stated time
+today,calib,Newcastle upon Tyne,2026,3.083,hours,3.083,train,Visit London,2.991,2.942,-2.981,,2.696,fastest stated time
+today,calib,Edinburgh,2026,4.0,hours,4.0,train,Visit London,3.71,3.639,-7.261,,3.576,fastest stated time
+today,calib,Glasgow,2026,5.0,hours,5.0,train,Visit London,3.752,3.613,-24.952,,3.594,fastest stated time
+1850,valid,Liverpool,1851,6.0,hours,6.0,express train,Sidney 1851,9.216,,53.599,6.547,,now completed in six hours
+1850,valid,Aberdeen,1855,17.5,hours,17.5,through train,Wikipedia Race to the North,24.142,,37.956,16.54,,taking 17 and a half hours from London
+1850,check,Edinburgh,1862,10.5,hours,10.5,Flying Scotsman,Wikipedia Flying Scotsman (railway service),17.754,,69.09,12.255,,10 and a half hours including a half-hour stop at York
+1850,check,Birmingham,1838,5.0,hours,5.0,day mail train,Tring Local History Museum,5.688,,13.76,4.183,,first timetable: five hours
+1910,valid,Edinburgh,1901,8.25,hours,8.25,Flying Scotsman,Wikipedia Flying Scotsman (railway service),10.646,,29.047,7.608,,eight hours 15 minutes (speed-limited era from 1900)
+1910,valid,Glasgow,1903,8.0,hours,8.0,express,Harper 1903 vol 2,10.733,,34.159,7.675,,by quickest train in exactly eight hours
+1910,valid,Plymouth,1904,4.417,hours,4.417,Cornish Riviera Express,Wikipedia Cornish Riviera Express,6.34,,43.556,4.624,,running to Plymouth in 4 hours 25 minutes
+1910,valid,Penzance,1904,7.0,hours,7.0,Cornish Riviera Express,Wikipedia Cornish Riviera Express,8.37,,19.575,6.05,,1904 timetable 10.10 to 17.10
+1910,valid,Bristol,1903,2.0,hours,2.0,express,Wikipedia The Cornishman (train),3.743,,87.126,2.848,,first train to be scheduled from London to Bristol in 2 hours
+1910,valid,Aberdeen,1896,10.333,hours,10.333,night express,Wikipedia Race to the North,13.924,,34.746,9.923,,East Coast booked 20.00 to 06.20 after 1895

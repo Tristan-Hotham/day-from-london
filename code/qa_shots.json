@@ -1,0 +1,10 @@
+[{"out": "qa/desktop.png", "w": 1280, "h": 800},
+ {"out": "qa/desktop_1850_popup.png", "w": 1280, "h": 800, "eval": "document.querySelectorAll('.eras button')[2].click();document.querySelector('#q').value='Manchester';document.querySelector('#q').dispatchEvent(new Event('input'));document.querySelector('#sug li').dispatchEvent(new MouseEvent('mousedown'))"},
+ {"out": "qa/desktop_1910_layers.png", "w": 1280, "h": 800, "eval": "document.querySelectorAll('.eras button')[3].click();document.getElementById('lyD').click();document.getElementById('lyrBtn').click()"},
+ {"out": "qa/desktop_1830.png", "w": 1280, "h": 800, "eval": "document.querySelectorAll('.eras button')[1].click()"},
+ {"out": "qa/desktop_today.png", "w": 1280, "h": 800, "eval": "document.querySelectorAll('.eras button')[4].click();window.__map.fitBounds([[-8,49.9],[1.8,59]])"},
+ {"out": "qa/phone.png", "w": 390, "h": 800, "dpr": 2},
+ {"out": "qa/phone_popup.png", "w": 390, "h": 800, "dpr": 2, "eval": "document.querySelector('#q').value='York';document.querySelector('#q').dispatchEvent(new Event('input'));document.querySelector('#sug li').dispatchEvent(new MouseEvent('mousedown'))"},
+ {"out": "qa/phone_full.png", "w": 390, "h": 800, "dpr": 1, "full": true},
+ {"out": "qa/desktop_full.png", "w": 1280, "h": 800, "full": true},
+ {"out": "qa/phone_zoom.png", "w": 390, "h": 800, "dpr": 2, "eval": "window.__map.jumpTo({center:[-1.1,53.96],zoom:11})"}]

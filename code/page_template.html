@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>A day from London | How far you could get in 12 hours, 1750 to today</title>
+<meta name="description" content="Leaving Charing Cross at dawn, how much of Great Britain could you reach in 12 hours? {{A.1750.share|f0}}% in 1750, {{A.today.share|f0}}% today. A calibrated model of roads and railways in five eras.">
+<meta property="og:title" content="A day from London">
+<meta property="og:description" content="How far you could get from London in 12 hours in 1750, the 1830s, 1850, 1910 and today: from {{A.1750.share|f0}}% of Great Britain to {{A.today.share|f0}}%.">
+<meta property="og:image" content="https://maps.tristanhotham.com/day-from-london/header.png">
+<meta property="og:url" content="https://maps.tristanhotham.com/day-from-london/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<style>
+{{CSS}}
+</style></head>
+<body>
+<div class="topbar">
+  <a class="tb-name" href="#mapWrap">A day from London</a>
+  <span class="tb-k">Data study · 2026</span>
+  <nav class="tb-links"><a href="#essay">About</a><button class="theme" id="theme" aria-label="Toggle dark mode">◐</button><a href="https://doi.org/10.5281/zenodo.24105505">Paper</a><a class="x" href="{{REPO}}">Data and code</a></nav>
+</div>
+<div class="mapband">
+  <div class="pane" id="mapWrap" data-fullscreen-map role="application" aria-label="Map of Great Britain coloured by hours of travel from London in the chosen era">
+    <div id="map"></div>
+    <div class="nojs" id="nojs">Loading the map. It needs JavaScript and WebGL.</div>
+    <div class="cartouche" id="cartouche">
+      <button class="ct-toggle" id="ctToggle" aria-expanded="true">A day from London ▾</button>
+      <button class="ct-fold" id="ctFold" title="Fold the title" aria-label="Fold the title">▴</button>
+      <div class="ct-body">
+        <div class="kicker"><b>Data study</b><span>2026</span></div>
+        <h1>A day <span class="a">from London</span></h1>
+        <p class="dek">Leave Charing Cross at dawn and travel for twelve hours. Colours show the modelled hours to every 2 km square of Great Britain on the roads and railways of each era; the black line is the edge of the day and the dashed lines its uncertainty. Pick an era below; tap anywhere for the hours in every era.</p>
+        <div class="byline">{{BYLINE}}</div>
+      </div>
+    </div>
+    <div class="ov-top">
+      <div class="srch"><input type="search" id="q" placeholder="Find a town" aria-label="Find a town" autocomplete="off"><ul class="sug" id="sug" role="listbox"></ul></div>
+      <div class="chips"><button class="chip lyr" id="lyrBtn" aria-expanded="false" aria-controls="lp">Layers</button></div>
+    </div>
+    <div class="lp" id="lp" role="dialog" aria-label="Map layers">
+      <h4>Layers</h4>
+      <label><input type="checkbox" id="lyH" checked> Hours of travel (colours)</label>
+      <label><input type="checkbox" id="lyI" checked> Edge of a 12-hour day</label>
+      <label><input type="checkbox" id="lyU" checked> Uncertainty of the edge (dashed)</label>
+      <label><input type="checkbox" id="lyR" checked> Roads or railways of the era</label>
+      <label><input type="checkbox" id="lyT" checked> Towns</label>
+      <label><input type="checkbox" id="lyD"> Documented journeys of the era (rings)</label>
+      <label><input type="checkbox" id="lyB" checked> Base map labels</label>
+    </div>
+    <div class="keys" id="keys"><b>Hours from Charing Cross</b><div class="bands" id="keyBands"></div><div class="bl"><span>0</span><span>4</span><span>8</span><span>12</span><span>24+</span></div>
+      <div class="ln"><i></i>edge of the day (12 h)</div><div class="ln kx"><i class="d"></i>with speeds &plusmn; the model error</div>
+      <div class="area" id="keyArea"></div><div class="row kx" id="keyNet" style="color:#6E604E"></div><div class="row kx" style="color:#6E604E">Great Britain only; 2 km squares; no timetables</div></div>
+    <div class="tl" id="tl"><button id="play" aria-label="Play through the eras">Play</button><div class="eras" role="group" aria-label="Era"><button>1750</button><button>1830s</button><button>1850</button><button>1910</button><button>Today</button></div></div>
+  </div>
+</div>
+<div class="wrap" id="essay">
+{{ESSAY}}
+<details><summary>Sources and licences</summary>
+<ul class="plain">
+<li>Turnpike roads: A. Rosevear, D. Bogart, L. Shaw-Taylor and M. Satchell, Turnpike road map for England and Wales 1700 to 1838, openICPSR project 195126 (doi:10.3886/E195126). London coaches: A. Rosevear, D. Bogart and L. Shaw-Taylor, Stagecoach services in England and Wales 1819 and 1836, openICPSR (doi:10.3886/E195128V2). No licence is stated for these files, so only derived results are shown: the road picture on the map is a low resolution drawing, not the data.</li>
+<li>Railways of 1851: M. Satchell, E. A. Wrigley, L. Shaw-Taylor, X. You and J. Henneberg, 1851 England, Wales and Scotland Rail Lines, UK Data Service ReShare (doi:10.5255/UKDA-SN-852991), CC BY 4.0.</li>
+<li>Today's roads and railways: OpenStreetMap contributors via OpenFreeMap vector tiles (ODbL). Stations open and closed: <a href="https://maps.tristanhotham.com/beeching-cuts/">Did Beeching Kill Your Town?</a> (Hotham 2026), from Wikipedia lists (CC BY-SA 4.0) and Wikidata (CC0).</li>
+<li>Train speeds: T. Leunig (2006) Time is money, Journal of Economic History 66(3). Documented journeys: C. G. Harper's road books (1899 to 1922), S. Smiles (1867), S. Sidney (1851), D. Bogart (2005), Visit London and other sources listed in the paper and in data/journeys_model.csv.</li>
+<li>Base map: OpenFreeMap Positron style (OpenStreetMap, ODbL). MapLibre GL JS 4.7.1 (BSD 3-Clause).</li>
+<li>Text and figures CC BY 4.0; code MIT; derived data CC BY 4.0 (OpenStreetMap-derived lines ODbL).</li>
+</ul></details>
+<div class="cta"><a class="p" href="https://doi.org/10.5281/zenodo.24105505">Read the paper</a><a href="{{REPO}}">Data and code</a><a href="https://blog.tristanhotham.com/2026/10/31/day-from-london/">Blog post</a></div>
+<footer>
+<p>Dr Tristan Hotham, Independent researcher. ORCID <a href="https://orcid.org/0000-0003-4931-9349">0000-0003-4931-9349</a>.</p>
+<p>Cite as: Hotham, T. (2026) A day from London: one-day travel reach across Great Britain in 1750, the 1830s, 1850, 1910 and today. Zenodo. <a href="https://doi.org/10.5281/zenodo.24105505">10.5281/zenodo.24105505</a></p>
+<p>Code: <a href="{{REPO}}">github.com/Tristan-Hotham/day-from-london</a> (MIT). Text, figures and data CC BY 4.0.</p>
+<p>{{AI}}</p>
+</footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="js/page.js?v={{VERSION}}"></script>
+{{FULLSCREEN}}
+<script src="https://maps.tristanhotham.com/assets/site-nav.js" defer></script>
+</body>
+</html>

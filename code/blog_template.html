@@ -1,0 +1,134 @@
+<!-- wp:paragraph -->
+<p><em>Leave Charing Cross at dawn and travel for twelve hours. How far do you get? In 1750, by stage coach, about {{A.1750.share|f0}}% of Great Britain was within a day. Today it is {{A.today.share|f0}}%. I rebuilt the roads and railways of five eras to draw the edge of that day on a map.</em></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://maps.tristanhotham.com/day-from-london/">Explore the interactive version</a></div>
+<!-- /wp:button -->
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://doi.org/10.5281/zenodo.24105505">Read the paper</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:paragraph -->
+<p>Everyone knows the milestones. In 1754 a coach promised to get you from London to Edinburgh in ten days in summer. In 1837 the Edinburgh mail coach was timed at just over 42 hours. By the early 1900s the Flying Scotsman did it in eight and a quarter hours, and today the fastest train takes four. But a list of journeys between famous places does not show what the whole country looked like from London. Where did a day's travel end? How much of Britain was inside it?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So I built a model. Britain is cut into 2 km squares, and for each era the squares are joined by the roads and railways of the time: the turnpike roads of 1750 and the 1830s, mapped by historians at Cambridge; the railway lines of 1851; a reconstruction of the network of 1910; and today's roads and railways. A traveller leaves Charing Cross and takes the quickest way to every square. Then I drew the line where twelve hours run out.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_maps.png|Five maps of Great Britain coloured by hours of travel from London in 1750, the 1830s, 1850, 1910 and today: in 1750 a small dark patch around London, in the 1830s a larger one reaching the Midlands, in 1850 a spread along the railways to the north, in 1910 most of England and southern Scotland, and today almost all of the mainland|Hours of travel from Charing Cross in each era. The black line is the edge of a 12 hour day; the dashed lines show it with speeds a little faster or slower, to show the uncertainty.}}
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">1750: a day is about {{DAYKM|f0}} km</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>In 1750 a stage coach was slow. Fitted to a dozen dated journeys from the 1740s to the 1760s, the model's coach managed about {{mph.1750|f1}} miles an hour on a turnpike, counting a travelling day as twelve hours. That puts the edge of the first day around {{DAYKM|f0}} km of road from London: {{FAR_1750}}. Everything within a day of London covered {{A.1750.km2|int}} square kilometres, {{A.1750.share|f0}}% of Great Britain. Edinburgh was {{EDDAYS1750|f0}} travelling days away.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Treat this map as a rough sketch. I could find and cite only twelve dated journeys for this period, and the model misses them by a median of {{fits.1750.loo.mdape|f0}}% when each one is left out of the fit. Before running anything I wrote down that an error above 25% would count against the model, so by my own test the 1750 model fails.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">The 1830s: the coach at full gallop</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Eighty years of turnpikes, better coaches and better horses made a big difference. For the 1830s I fitted the coach speed to the timetables of {{coach.n_termini_1836|int}} coach services from London in 1836, compiled by Alan Rosevear, Dan Bogart and Leigh Shaw-Taylor. The best fit is {{mph.1830|f1}} miles an hour, stops included, close to the 8.7 mph other historians have used. A day now reached {{A.1830.share|f0}}% of Britain: {{FAR_1830}}.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_coach.png|Two scatter charts of the scheduled speeds of London coach services against route length in 1819 and 1836: the middle half of services in 1836 run at about 7.4 to 9.1 miles an hour, against about 5.9 to 7.5 in 1819|Scheduled speeds of the fastest coach to each place in 1819 and 1836, with the fitted speed on a turnpike.}}
+
+<!-- wp:paragraph -->
+<p>Here the model is on firm ground. Fitted to the 1836 timetables, it predicts the separate list of mail coaches leaving London in 1837 to within a median of {{valid.1830_mail1837.mdape|f0}}%.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">1850: the railway arrives</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>By 1851 Britain had about 6,300 miles of railway. Trains in the model run at the average speeds Tim Leunig measured from the timetables of 1850, {{mph.rail1850|f0}} miles an hour along the track on main lines and less on branches, with half an hour to wait for each train and coaches feeding the stations. The day jumped to {{A.1850.share|f0}}% of Britain, reaching {{FAR_1850}}. In about fifteen years the reach of a day from London grew at least {{ratio.1850_1830|f1}} times.</p>
+<p>That {{A.1850.share|f0}}% is a floor, not a precise figure. The model's trains are average trains, and against the four fastest journeys of the period I could document it is slower by a median of {{valid.1850_all.mdape|f0}}%. A traveller on the best express would have gone further.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:pullquote -->
+<figure class="wp-block-pullquote"><blockquote><p>In 1750 a day from London covered {{A.1750.share|f0}}% of Great Britain. Today it covers {{A.today.share|f0}}%.</p></blockquote></figure>
+<!-- /wp:pullquote -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">1910 and today</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>There is no public map of the railway network of 1910, so I rebuilt it from the 1851 lines, today's lines and the stations that closed after 1910, joining them up where they now sit far from any track. With Leunig's 1910 speeds, a day reached at least {{A.1910.share|f0}}% of the island (again a floor: the model is {{valid.1910_all.mdape|f0}}% slower than six documented expresses): {{FAR_1910}}. Today, by car or train, it is {{A.today.share|f0}}%: every mainland town on the map, and only islands are left outside.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_area.png|Bar chart of the share of Great Britain's land within 12 hours of London in five eras, rising from {{A.1750.share|f0}}% in 1750 to {{A.today.share|f0}}% today, with uncertainty whiskers|Share of Great Britain's land within twelve hours of Charing Cross. Whiskers: speeds raised and lowered by each era's typical model error.}}
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">London to Edinburgh</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The road north tells the story in one line. In the model, Edinburgh is {{edinburgh_model.1750|f0}} hours of travel from London in 1750, {{edinburgh_model.1830|f0}} in the 1830s, {{edinburgh_model.1850|f0}} in 1850, {{edinburgh_model.1910|f1}} in 1910 and {{edinburgh_model.today|f1}} today. The documented journeys are 120 hours for the ten days of 1754 (at twelve hours a day), 42 for the 1837 mail, 8.25 for the Flying Scotsman of the early 1900s and 4 for today's fastest train. Between 1750 and the 1830s the journey shrank by about {{convergence_edinburgh_min_per_year.1750_1830|f0}} minutes a year; between the 1830s and 1850, by {{convergence_edinburgh_min_per_year.1830_1850|f0}} minutes a year.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_edinburgh.png|Line chart on a log scale of hours from London to Edinburgh from 1750 to today, documented journeys as dots and the model as a line, falling from about 120 hours to about 4|London to Edinburgh: documented journeys and the model.}}
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">How good is it?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Every speed in the model is either fitted to cited journey times or taken from published work, and every era is tested on journeys it did not see. The 1830s coach model holds up well, with a median error of {{fits.1830.loo.mdape|f0}}% against {{coach.n_termini_1836|int}} timetabled services left out one at a time, and {{valid.1830_mail1837.mdape|f0}}% against the 1837 mail coaches. 1750 fails the test I set in advance ({{fits.1750.loo.mdape|f0}}% against a 25% limit), so its map is a rough sketch. For the railways the model uses average trains, so it is slower than the famous expresses: the median gap is {{valid.1850_all.mdape|f0}}% in 1850 and {{valid.1910_all.mdape|f0}}% in 1910, checked on only four and six journeys. So read the 1850 and 1910 maps as lower bounds, not precise figures. Today's trains are fitted to twelve fastest times and miss them by a median {{fits.today_rail.loo.mdape|f0}}%.</p>
+<!-- /wp:paragraph -->
+
+{{IMG|b_valid.png|Scatter chart on log scales of modelled against documented journey times from London for all five eras, points lying mostly near the diagonal|Modelled against documented journey times. Dotted lines: within 20%.}}
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">How I did this</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The roads of 1750 and the 1830s are the turnpike and main road map of England and Wales by Alan Rosevear, Dan Bogart, Leigh Shaw-Taylor and Max Satchell, which records whether each stretch was a turnpike in each decade. Roads that were not turnpikes run at 0.6 of turnpike speed. Scotland is not in that map, so its main roads come from today's trunk and primary roads. The railways of 1850 are the Cambridge Group's 1851 rail lines. For 1910 I joined the 1851 lines, today's railways and straight links between closed stations. Today's roads and railways come from OpenStreetMap. Away from the roads and railways, the traveller walks at 3 miles an hour. Shortest paths from Charing Cross are found across the whole grid, and the analysis was pre-specified in a written plan before I computed any travel times.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>There is a lot this cannot see. There are no timetables, so the model assumes a coach or train is waiting when you arrive, apart from a half-hour allowance. It knows nothing of weather, floods, hills, fares or the price of a horse. The inferred lines of 1910 are straight, and some may join stations that were never connected. The twelve hour day is a choice: an eight hour day or a sixteen hour one moves the line a long way, and the paper reports both.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://maps.tristanhotham.com/day-from-london/">Explore the interactive version</a></div>
+<!-- /wp:button -->
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://doi.org/10.5281/zenodo.24105505">Read the paper</a></div>
+<!-- /wp:button -->
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://github.com/Tristan-Hotham/day-from-london">Data and code</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Notes and sources</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>A. Rosevear, D. Bogart, L. Shaw-Taylor and M. Satchell, Turnpike road map for England and Wales 1700 to 1838 (openICPSR 195126); A. Rosevear, D. Bogart and L. Shaw-Taylor, Stagecoach services in England and Wales 1819 and 1836 (openICPSR 195128). Used for derived results only.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>M. Satchell, E. A. Wrigley, L. Shaw-Taylor, X. You and J. Henneberg, 1851 England, Wales and Scotland Rail Lines, UK Data Service ReShare (CC BY 4.0). Closed and open stations from my study of the Beeching cuts. Today's roads and railways: OpenStreetMap contributors via OpenFreeMap (ODbL).</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>Train speeds: T. Leunig, Time is money (Journal of Economic History, 2006). Coaching history: D. Bogart (Explorations in Economic History, 2005); D. Gerhold (Economic History Review, 2014). Journey times from C. G. Harper's road books, S. Smiles, S. Sidney's Rides on Railways and the other sources listed in the paper.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>I wrote the text, with drafting and editing assistance from Claude (Anthropic), which also helped prepare the analysis code. I reviewed and checked all text and results.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
